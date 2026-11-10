@@ -1,0 +1,5 @@
+{
+  "rounds": [1, 2, 3],
+  "seeds": [42, 123, 2026],
+  "model": "Qwen2.5-32B-Instruct"
+}

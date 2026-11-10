@@ -1,0 +1,12 @@
+Classify the retrieval-planning topology of this question using its AMR graph.
+Return exactly one JSON object: {"strategy":"sequential"}, {"strategy":"parallel"}, or {"strategy":"hierarchical"}.
+Definitions:
+sequential: one dependency chain; an intermediate entity or answer is needed to resolve the next step.
+parallel: independent evidence branches, directly grounded in known entities, combined in a final comparison or aggregation.
+hierarchical: a dependency chain AND independent branches/fork/join; either bridge-then-comparison or comparison-then-bridge.
+Use AMR nesting, shared variables, semantic roles, and the unknown node as structural evidence. The question disambiguates concepts. Named constants alone are not evidence branches. Mentioning two entities alone does not imply parallel. If a compared attribute needs a dependent chain, choose hierarchical. Ignore obvious parser noise. Do not invent dependencies.
+Examples:
+"Where was the author of book X born?": sequential, find author then birthplace.
+"Were A and B born in the same country?": parallel, independently find two known people's birth countries then compare.
+"Were the authors of books X and Y born in the same country?": hierarchical, author-to-birthplace chains on parallel branches then compare.
+These are silver strategy labels, not answer predictions.

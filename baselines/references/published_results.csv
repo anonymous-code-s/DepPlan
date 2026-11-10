@@ -1,0 +1,64 @@
+method,original_variant,original_model,dataset,metric,published_percent,source_table,source_url
+ircot,IRCoT,GPT-3,hotpot,EM,49.30,Table 1,https://aclanthology.org/2023.acl-long.557.pdf
+ircot,IRCoT,GPT-3,hotpot,F1,60.70,Table 1,https://aclanthology.org/2023.acl-long.557.pdf
+ircot,IRCoT,GPT-3,musique,EM,34.20,Table 1,https://aclanthology.org/2023.acl-long.557.pdf
+ircot,IRCoT,GPT-3,musique,F1,43.80,Table 1,https://aclanthology.org/2023.acl-long.557.pdf
+ircot,IRCoT,GPT-3,2wiki,EM,57.70,Table 1,https://aclanthology.org/2023.acl-long.557.pdf
+ircot,IRCoT,GPT-3,2wiki,F1,68.00,Table 1,https://aclanthology.org/2023.acl-long.557.pdf
+react,ReAct,PaLM-540B,hotpot,EM,27.40,Table 1,https://openreview.net/pdf?id=WE_vluYUL-X
+react,ReAct,PaLM-540B,musique,EM,,Table 1,https://openreview.net/pdf?id=WE_vluYUL-X
+react,ReAct,PaLM-540B,2wiki,EM,,Table 1,https://openreview.net/pdf?id=WE_vluYUL-X
+self_ask,Self-Ask + search,Davinci-002,hotpot,EM,,"Tables 1, 14",https://aclanthology.org/2023.findings-emnlp.378.pdf
+self_ask,Self-Ask + search,Davinci-002,hotpot,F1,,"Tables 1, 14",https://aclanthology.org/2023.findings-emnlp.378.pdf
+self_ask,Self-Ask + search,Davinci-002,musique,EM,15.20,"Tables 1, 14",https://aclanthology.org/2023.findings-emnlp.378.pdf
+self_ask,Self-Ask + search,Davinci-002,musique,F1,27.20,"Tables 1, 14",https://aclanthology.org/2023.findings-emnlp.378.pdf
+self_ask,Self-Ask + search,Davinci-002,2wiki,EM,40.10,"Tables 1, 14",https://aclanthology.org/2023.findings-emnlp.378.pdf
+self_ask,Self-Ask + search,Davinci-002,2wiki,F1,52.60,"Tables 1, 14",https://aclanthology.org/2023.findings-emnlp.378.pdf
+genground,GenGround,GPT-3.5-turbo,hotpot,F1,52.26,Table 2,https://aclanthology.org/2024.acl-long.397.pdf
+genground,GenGround,GPT-3.5-turbo,musique,F1,27.36,Table 2,https://aclanthology.org/2024.acl-long.397.pdf
+genground,GenGround,GPT-3.5-turbo,2wiki,F1,50.21,Table 2,https://aclanthology.org/2024.acl-long.397.pdf
+dec,DEC,Llama-3.1-8B,hotpot,F1,50.96,Table 1,https://aclanthology.org/2025.findings-acl.846.pdf
+dec,DEC,Llama-3.1-8B,musique,F1,20.96,Table 1,https://aclanthology.org/2025.findings-acl.846.pdf
+dec,DEC,Llama-3.1-8B,2wiki,F1,46.54,Table 1,https://aclanthology.org/2025.findings-acl.846.pdf
+dec,DEC,GPT-4o,hotpot,F1,62.11,Table 1,https://aclanthology.org/2025.findings-acl.846.pdf
+dec,DEC,GPT-4o,musique,F1,31.30,Table 1,https://aclanthology.org/2025.findings-acl.846.pdf
+dec,DEC,GPT-4o,2wiki,F1,73.26,Table 1,https://aclanthology.org/2025.findings-acl.846.pdf
+deeprag,DeepRAG-RL_on,Llama-3-8B,hotpot,EM,37.40,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Llama-3-8B,hotpot,F1,48.91,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Llama-3-8B,musique,EM,25.70,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Llama-3-8B,musique,F1,34.44,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Llama-3-8B,2wiki,EM,49.90,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Llama-3-8B,2wiki,F1,55.20,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Qwen-2.5-32B,hotpot,EM,39.10,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Qwen-2.5-32B,hotpot,F1,49.51,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Qwen-2.5-32B,musique,EM,22.80,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Qwen-2.5-32B,musique,F1,31.79,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Qwen-2.5-32B,2wiki,EM,46.50,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+deeprag,DeepRAG-RL_on,Qwen-2.5-32B,2wiki,F1,51.32,Table 1,https://proceedings.iclr.cc/paper_files/paper/2026/file/bdff657cb9351656c025da8e1dc538a4-Paper-Conference.pdf
+r_search,R-Search,Qwen2.5-7B-Instruct,hotpot,EM,35.30,Table 3,https://doi.org/10.1016/j.ipm.2026.104732
+r_search,R-Search,Qwen2.5-7B-Instruct,musique,EM,19.60,Table 3,https://doi.org/10.1016/j.ipm.2026.104732
+r_search,R-Search,Qwen2.5-7B-Instruct,2wiki,EM,38.20,Table 3,https://doi.org/10.1016/j.ipm.2026.104732
+r_search,R-Search,DeepSeek-R1-Distill-Qwen-7B,hotpot,EM,36.80,Table 3,https://doi.org/10.1016/j.ipm.2026.104732
+r_search,R-Search,DeepSeek-R1-Distill-Qwen-7B,musique,EM,21.20,Table 3,https://doi.org/10.1016/j.ipm.2026.104732
+r_search,R-Search,DeepSeek-R1-Distill-Qwen-7B,2wiki,EM,40.60,Table 3,https://doi.org/10.1016/j.ipm.2026.104732
+coa,CoA,text-bison@001,hotpot,F1,53.62,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,text-bison@001,musique,F1,37.09,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,text-bison@001,2wiki,F1,,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,text-unicorn@001,hotpot,F1,62.04,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,text-unicorn@001,musique,F1,42.49,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,text-unicorn@001,2wiki,F1,,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,Gemini Ultra,hotpot,F1,54.26,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,Gemini Ultra,musique,F1,35.09,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+coa,CoA,Gemini Ultra,2wiki,F1,,Table 4,https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf
+gear,GeAR,GPT-4o-mini,hotpot,EM,50.40,Table 3,https://aclanthology.org/2025.findings-acl.624.pdf
+gear,GeAR,GPT-4o-mini,hotpot,F1,69.40,Table 3,https://aclanthology.org/2025.findings-acl.624.pdf
+gear,GeAR,GPT-4o-mini,musique,EM,19.00,Table 3,https://aclanthology.org/2025.findings-acl.624.pdf
+gear,GeAR,GPT-4o-mini,musique,F1,35.60,Table 3,https://aclanthology.org/2025.findings-acl.624.pdf
+gear,GeAR,GPT-4o-mini,2wiki,EM,47.40,Table 3,https://aclanthology.org/2025.findings-acl.624.pdf
+gear,GeAR,GPT-4o-mini,2wiki,F1,62.30,Table 3,https://aclanthology.org/2025.findings-acl.624.pdf
+belle,BELLE,GPT-3.5-turbo,hotpot,F1,66.50,Table 1,https://aclanthology.org/2025.acl-long.211.pdf
+belle,BELLE,GPT-3.5-turbo,musique,F1,,Table 1,https://aclanthology.org/2025.acl-long.211.pdf
+belle,BELLE,GPT-3.5-turbo,2wiki,F1,75.70,Table 1,https://aclanthology.org/2025.acl-long.211.pdf
+per,PER-QA_rag,GPT-4o + Llama3.1-8B,hotpot,F1,62.90,Table 3,https://aclanthology.org/2025.acl-long.1142.pdf
+per,PER-QA_rag,GPT-4o + Llama3.1-8B,musique,F1,24.30,Table 3,https://aclanthology.org/2025.acl-long.1142.pdf
+per,PER-QA_rag,GPT-4o + Llama3.1-8B,2wiki,F1,54.60,Table 3,https://aclanthology.org/2025.acl-long.1142.pdf

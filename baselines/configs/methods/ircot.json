@@ -1,0 +1,78 @@
+{
+  "method": "ircot",
+  "model": "Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 300,
+  "answer_max_tokens": 300,
+  "retriever": "bm25",
+  "top_k": 6,
+  "max_steps": 8,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "max_passages": 15,
+  "parameter_sources": {
+    "method": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Executable shared-backbone workflow; see method-specific evidence and adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared comparison backbone replaces each original generator; model id must match the serving endpoint."
+    },
+    "temperature": {
+      "kind": "code",
+      "reference": "https://github.com/StonyBrookNLP/ircot/blob/3c1820f698eea5eeddb4fba3c56b64c961e063e4/commaqa/models/gpt3generator.py",
+      "detail": "GPT3Generator.__init__: temperature=0."
+    },
+    "answer_temperature": {
+      "kind": "code",
+      "reference": "https://github.com/StonyBrookNLP/ircot/blob/3c1820f698eea5eeddb4fba3c56b64c961e063e4/commaqa/models/gpt3generator.py",
+      "detail": "GPT3Generator.__init__: temperature=0."
+    },
+    "max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/StonyBrookNLP/ircot/blob/3c1820f698eea5eeddb4fba3c56b64c961e063e4/commaqa/models/gpt3generator.py",
+      "detail": "GPT3Generator.__init__: max_tokens=300."
+    },
+    "answer_max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/StonyBrookNLP/ircot/blob/3c1820f698eea5eeddb4fba3c56b64c961e063e4/commaqa/models/gpt3generator.py",
+      "detail": "Same 300-token generator default used by the separate QA reader."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "https://aclanthology.org/2023.acl-long.557/",
+      "detail": "Section 4.1 specifies BM25. Retrieval uses BM25 over the supplied shared candidate collection."
+    },
+    "top_k": {
+      "kind": "code",
+      "reference": "https://github.com/StonyBrookNLP/ircot/blob/3c1820f698eea5eeddb4fba3c56b64c961e063e4/base_configs/ircot_codex_hotpotqa.jsonnet",
+      "detail": "bm25_retrieval_count=6, transferred unchanged from the published configuration."
+    },
+    "max_steps": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2023.acl-long.557/",
+      "detail": "Section 3.1, footnote 4: eight reasoning steps; chosen over the code controller generic default of ten."
+    },
+    "seeds": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared protocol seeds; applied to every method."
+    },
+    "max_passages": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2023.acl-long.557/",
+      "detail": "Section 3.1, footnote 5: cap the accumulated paragraph collection at fifteen."
+    }
+  },
+  "sources": [
+    "https://aclanthology.org/2023.acl-long.557/",
+    "https://github.com/StonyBrookNLP/ircot/blob/3c1820f698eea5eeddb4fba3c56b64c961e063e4/"
+  ]
+}

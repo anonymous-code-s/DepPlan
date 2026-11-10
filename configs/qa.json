@@ -1,0 +1,18 @@
+{
+  "language_model": "Qwen2.5-32B-Instruct",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "decoding_seeds": [42, 123, 2026],
+  "semantic_accuracy": true,
+  "judge_model": null,
+  "planning_temperature": 0.7,
+  "answer_temperature": 0.0,
+  "interaction_rounds": 2,
+  "retrieval_top_k": 5,
+  "planning_max_tokens": 1024,
+  "answer_max_tokens": 512,
+  "compact_prompts": true,
+  "api_attempts": 3,
+  "plan_repair_attempts": 0,
+  "request_timeout_seconds": 180,
+  "amr_input": "cached per-question triples"
+}

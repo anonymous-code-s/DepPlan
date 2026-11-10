@@ -1,0 +1,46 @@
+{
+  "model_type": "strategy_gcn",
+  "structure_source": "gpt4o_mini_amr",
+  "structure_description": "GPT-4o-mini AMR generation",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "input_dim": 768,
+  "labels": [
+    "sequential",
+    "parallel",
+    "hierarchical"
+  ],
+  "retraining_seed": 2026,
+  "selected_training_questions": 1000,
+  "effective_training_graphs": 823,
+  "architecture": {
+    "projection": 128,
+    "gcn_layers": 2,
+    "gcn_hidden": 128,
+    "mlp": [
+      128,
+      64,
+      3
+    ],
+    "dropout": 0.2
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "epochs": 30,
+  "batch_size": 16,
+  "checkpoint_selection": "last_epoch",
+  "weights_sha256": "bed74f59e39b3076246d395d23d8cfcc22b6c85ed2e00bbb15fd48446c088c3d",
+  "parameter_count": 139907,
+  "release_directory": "GPT-4o-mini",
+  "graph_source": {
+    "graph_source_name": "GPT-4o-mini",
+    "official_reference": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+    "interface": "OpenAI API",
+    "upstream_kind": "external_api_model",
+    "model_id": "gpt-4o-mini",
+    "upstream_weights_included": false
+  },
+  "provenance_record": "checkpoints/source_provenance.json"
+}

@@ -1,0 +1,15 @@
+{
+  "seeds": [42, 123, 2026],
+  "variants": [
+    "full",
+    "text_surrogate",
+    "no_semantic_units",
+    "no_planning_strategy",
+    "direct_llm_strategy",
+    "majority_class_strategy",
+    "proposer_only",
+    "proposer_verifier"
+  ],
+  "training_manifest": "data/classifier/train_manifest.jsonl",
+  "tokenizer": "Qwen/Qwen2.5-32B-Instruct"
+}

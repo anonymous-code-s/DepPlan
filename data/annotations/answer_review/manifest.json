@@ -1,0 +1,25 @@
+{
+  "answer_records": 180,
+  "judgments": 540,
+  "methods": {
+    "BELLE": 20,
+    "CoA": 20,
+    "DEC": 20,
+    "DepPlan": 20,
+    "GeAR": 20,
+    "PER": 20,
+    "R-Search": 20,
+    "ReAct": 20,
+    "Self-Ask": 20
+  },
+  "datasets": {
+    "2wiki": 60,
+    "hotpot": 60,
+    "musique": 60
+  },
+  "unique_questions": 64,
+  "sampling_seed": 2026,
+  "sampling_unit": "saved method answer",
+  "selection": "Question IDs sampled uniformly within each method/dataset pool; one available seed selected uniformly per question. EM/F1 and judge outputs are not used for selection.",
+  "eligibility": "Nonempty prediction, official development question and reference match. Generation failures without answers are excluded from this evaluator comparison, not from QA scores."
+}

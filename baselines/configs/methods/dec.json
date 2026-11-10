@@ -1,0 +1,96 @@
+{
+  "method": "dec",
+  "model": "Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 512,
+  "answer_max_tokens": 128,
+  "retriever": "dense",
+  "top_k": 10,
+  "max_steps": 8,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "base_documents": 2,
+  "keyword_count": 2,
+  "keyword_case_sensitive": true,
+  "keyword_max_tokens": 128,
+  "parameter_sources": {
+    "method": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Executable shared-backbone workflow; see method-specific evidence and adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared comparison backbone replaces each original generator; model id must match the serving endpoint."
+    },
+    "temperature": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_temperature": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared BGE candidate collection and local dense ranking replace the original retrieval service; corpus scope is provided by the runner."
+    },
+    "top_k": {
+      "kind": "code",
+      "reference": "https://github.com/neukg/DEC/blob/f46b99bfd1cc1839e75c7b4f54e72478606ebb78/DEC_LOCAL_EK_ALL_base2.py",
+      "detail": "process_sub_question queries ten documents; also Appendix A of the paper."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Execute at most eight planned sub-questions; official code executes the entire generated list without a numerical bound."
+    },
+    "seeds": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared protocol seeds; applied to every method."
+    },
+    "base_documents": {
+      "kind": "code",
+      "reference": "https://github.com/neukg/DEC/blob/f46b99bfd1cc1839e75c7b4f54e72478606ebb78/DEC_LOCAL_EK_ALL_base2.py",
+      "detail": "EK_recaller keeps first two documents unconditionally, then appends matches."
+    },
+    "keyword_count": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.846/",
+      "detail": "Figure 5: extract one or two distinctive single-word keywords. This implementation uses Qwen for keyword extraction."
+    },
+    "keyword_case_sensitive": {
+      "kind": "code",
+      "reference": "https://github.com/neukg/DEC/blob/f46b99bfd1cc1839e75c7b4f54e72478606ebb78/DEC_LOCAL_EK_ALL_base2.py",
+      "detail": "EK_recaller uses all(keyword in doc[contents] for keyword in EK_list), a literal case-sensitive AND filter."
+    },
+    "keyword_max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "128 output tokens for the adapted Qwen keyword JSON; original uses a trained Llama-3.2-3B extractor."
+    }
+  },
+  "sources": [
+    "https://aclanthology.org/2025.findings-acl.846/",
+    "https://github.com/neukg/DEC/blob/f46b99bfd1cc1839e75c7b4f54e72478606ebb78/DEC_LOCAL_EK_ALL_base2.py"
+  ]
+}

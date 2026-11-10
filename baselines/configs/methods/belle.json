@@ -1,0 +1,109 @@
+{
+  "method": "belle",
+  "model": "Qwen2.5-32B-Instruct",
+  "tokenizer": "Qwen/Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 1024,
+  "answer_max_tokens": 1024,
+  "retriever": "bm25",
+  "top_k": 5,
+  "max_steps": 256,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "debate_rounds": 3,
+  "max_plan_operators": 8,
+  "operator_max_iterations": 6,
+  "max_subquestions": 12,
+  "sources": [
+    "https://aclanthology.org/2025.acl-long.211.pdf"
+  ],
+  "implementation_status": "shared_protocol_adaptation",
+  "source_verified_on": "2026-11-09",
+  "parameter_sources": {
+    "method": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.acl-long.211.pdf",
+      "detail": "Published method identity; implementation uses the declared shared-protocol adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "tokenizer": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "temperature": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_temperature": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "retriever": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.acl-long.211.pdf#page=14",
+      "detail": "Appendix A.1 uses BM25 for the retrieval-augmented operators. The searchable collection is adapted to the shared per-question candidates."
+    },
+    "top_k": {
+      "kind": "choice",
+      "reference": "https://aclanthology.org/2025.acl-long.211.pdf#page=13",
+      "detail": "Appendix A.1 gives a range of 3–10 passages without a complete per-dataset assignment; choose 5."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "256-step execution limit; method-specific step units are documented in agent_parameters.md. Reaching the limit returns an error."
+    },
+    "seeds": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "debate_rounds": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.acl-long.211.pdf#page=19",
+      "detail": "Table 10: maximum three debate rounds; each round uses affirmative, negative, fast, slow, judge in that order."
+    },
+    "max_plan_operators": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "operator_max_iterations": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "max_subquestions": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "encoder": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    }
+  },
+  "encoder": "BAAI/bge-base-en-v1.5"
+}

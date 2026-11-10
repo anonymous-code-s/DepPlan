@@ -1,0 +1,110 @@
+{
+  "method": "coa",
+  "model": "Qwen2.5-32B-Instruct",
+  "tokenizer": "Qwen/Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 1024,
+  "answer_max_tokens": 1024,
+  "retriever": "none",
+  "top_k": 5,
+  "max_steps": 256,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "worker_window_tokens": 8192,
+  "communication_max_tokens": 1024,
+  "worker_output_tokens": 1024,
+  "chat_overhead_tokens": 64,
+  "sources": [
+    "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf",
+    "https://research.google/blog/chain-of-agents-large-language-models-collaborating-on-long-context-tasks/"
+  ],
+  "implementation_status": "shared_protocol_adaptation",
+  "source_verified_on": "2026-11-09",
+  "parameter_sources": {
+    "method": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf",
+      "detail": "Published method identity; implementation uses the declared shared-protocol adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "tokenizer": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "temperature": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=18",
+      "detail": "Appendix B: temperature 0; maximum generation 1024 for models other than Gemini Ultra (2048). Communication uses the worker generation cap."
+    },
+    "answer_temperature": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=18",
+      "detail": "Appendix B: temperature 0; maximum generation 1024 for models other than Gemini Ultra (2048). Communication uses the worker generation cap."
+    },
+    "max_tokens": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=18",
+      "detail": "Appendix B: temperature 0; maximum generation 1024 for models other than Gemini Ultra (2048). Communication uses the worker generation cap."
+    },
+    "answer_max_tokens": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=18",
+      "detail": "Appendix B: temperature 0; maximum generation 1024 for models other than Gemini Ultra (2048). Communication uses the worker generation cap."
+    },
+    "retriever": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf",
+      "detail": "The method does not perform retrieval. CoA processes the supplied context in source order; prompting methods use only their question and demonstrations."
+    },
+    "top_k": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Unused standard retrieval field; CoA reads every input candidate in original order."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "256-step execution limit; method-specific step units are documented in agent_parameters.md. Reaching the limit returns an error."
+    },
+    "seeds": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "worker_window_tokens": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=21",
+      "detail": "Appendix F.1 and main 8k experiments: agent context window 8k; implemented as 8192 tokens."
+    },
+    "communication_max_tokens": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=18",
+      "detail": "Appendix B: temperature 0; maximum generation 1024 for models other than Gemini Ultra (2048). Communication uses the worker generation cap."
+    },
+    "worker_output_tokens": {
+      "kind": "paper",
+      "reference": "https://papers.nips.cc/paper/2024/file/ee71a4b14ec26710b39ee6be113d7750-Paper-Conference.pdf#page=18",
+      "detail": "Appendix B: temperature 0; maximum generation 1024 for models other than Gemini Ultra (2048). Communication uses the worker generation cap."
+    },
+    "chat_overhead_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Reserve 64 tokens for chat framing, and explicit 1024-token carry plus 1024-token output; count question and instruction tokens before packing source sentences."
+    },
+    "encoder": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    }
+  },
+  "encoder": "BAAI/bge-base-en-v1.5"
+}

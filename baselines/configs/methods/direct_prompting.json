@@ -1,0 +1,71 @@
+{
+  "method": "direct_prompting",
+  "model": "Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 128,
+  "answer_max_tokens": 128,
+  "retriever": "none",
+  "top_k": 1,
+  "max_steps": 1,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "parameter_sources": {
+    "method": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Executable shared-backbone workflow; see method-specific evidence and adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared comparison backbone replaces each original generator; model id must match the serving endpoint."
+    },
+    "temperature": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_temperature": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "retriever": {
+      "kind": "paper",
+      "reference": "https://arxiv.org/abs/2005.14165",
+      "detail": "The method does not perform retrieval. CoA processes the supplied context in source order; prompting methods use only their question and demonstrations."
+    },
+    "top_k": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Unused: this method performs no retrieval."
+    },
+    "max_steps": {
+      "kind": "paper",
+      "reference": "https://arxiv.org/abs/2005.14165",
+      "detail": "One prompted generation; no external retrieval. Task-specific demonstrations are adapted."
+    },
+    "seeds": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared protocol seeds; applied to every method."
+    }
+  },
+  "sources": [
+    "https://arxiv.org/abs/2005.14165"
+  ]
+}

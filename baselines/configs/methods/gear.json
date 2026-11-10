@@ -1,0 +1,140 @@
+{
+  "method": "gear",
+  "model": "Qwen2.5-32B-Instruct",
+  "tokenizer": "Qwen/Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 1024,
+  "answer_max_tokens": 1024,
+  "retriever": "hybrid",
+  "top_k": 10,
+  "max_steps": 256,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "beam_width": 10,
+  "beam_length": 2,
+  "neighbors_per_beam": 100,
+  "diversity_gamma": 20,
+  "triple_link_mode": "hybrid",
+  "answer_top_k": 5,
+  "max_iterations_by_dataset": {
+    "hotpotqa": 2,
+    "hotpot": 2,
+    "2wiki": 2,
+    "2wikimultihopqa": 2,
+    "musique": 4
+  },
+  "sources": [
+    "https://aclanthology.org/2025.findings-acl.624.pdf",
+    "https://gear-rag.github.io/"
+  ],
+  "implementation_status": "shared_protocol_adaptation",
+  "source_verified_on": "2026-11-09",
+  "parameter_sources": {
+    "method": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf",
+      "detail": "Published method identity; implementation uses the declared shared-protocol adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "tokenizer": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "temperature": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=6",
+      "detail": "Section 6.2 sets temperature to 0."
+    },
+    "answer_temperature": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=6",
+      "detail": "Section 6.2 sets temperature to 0."
+    },
+    "max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=6",
+      "detail": "Hybrid BM25 plus dense RRF as in section 6.1; common BGE replaces all-mpnet-base-v2 for both passage and triple ranking."
+    },
+    "top_k": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=12",
+      "detail": "Appendix B.2: width 10, length 2, 100 neighbors per beam, gamma twice width (20), ten initial chunks per multistep round."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "256-step execution limit; method-specific step units are documented in agent_parameters.md. Reaching the limit returns an error."
+    },
+    "seeds": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "beam_width": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=12",
+      "detail": "Appendix B.2: width 10, length 2, 100 neighbors per beam, gamma twice width (20), ten initial chunks per multistep round."
+    },
+    "beam_length": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=12",
+      "detail": "Appendix B.2: width 10, length 2, 100 neighbors per beam, gamma twice width (20), ten initial chunks per multistep round."
+    },
+    "neighbors_per_beam": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=12",
+      "detail": "Appendix B.2: width 10, length 2, 100 neighbors per beam, gamma twice width (20), ten initial chunks per multistep round."
+    },
+    "diversity_gamma": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=12",
+      "detail": "Appendix B.2: width 10, length 2, 100 neighbors per beam, gamma twice width (20), ten initial chunks per multistep round."
+    },
+    "triple_link_mode": {
+      "kind": "adaptation",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=6",
+      "detail": "Hybrid BM25 plus dense RRF as in section 6.1; common BGE replaces all-mpnet-base-v2 for both passage and triple ranking."
+    },
+    "answer_top_k": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=7",
+      "detail": "Table 3 caption: downstream QA uses the top five retrieved passages. Appendix B.2 initial retrieval remains ten per multi-step round."
+    },
+    "max_iterations_by_dataset": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.findings-acl.624.pdf#page=12",
+      "detail": "Appendix B.1: two iterations for HotpotQA/2Wiki, four for MuSiQue."
+    },
+    "encoder": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "rrf_k": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "RRF uses constant 60; the GeAR paper specifies RRF but does not state its constant."
+    }
+  },
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "rrf_k": 60
+}

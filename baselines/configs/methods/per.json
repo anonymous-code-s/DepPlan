@@ -1,0 +1,105 @@
+{
+  "method": "per",
+  "model": "Qwen2.5-32B-Instruct",
+  "tokenizer": "Qwen/Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 1024,
+  "answer_max_tokens": 1024,
+  "retriever": "dense",
+  "top_k": 5,
+  "max_steps": 256,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "use_hyde": true,
+  "hyde_query_repetitions": 5,
+  "max_plan_nodes": 16,
+  "sources": [
+    "https://aclanthology.org/2025.acl-long.1142.pdf",
+    "https://github.com/GenIRAG/PER-PSE/blob/main/method.py",
+    "https://github.com/GenIRAG/PER-PSE/blob/main/module.py"
+  ],
+  "implementation_status": "shared_protocol_adaptation",
+  "source_verified_on": "2026-11-09",
+  "parameter_sources": {
+    "method": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.acl-long.1142.pdf",
+      "detail": "Published method identity; implementation uses the declared shared-protocol adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "tokenizer": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "temperature": {
+      "kind": "code",
+      "reference": "https://github.com/GenIRAG/PER-PSE/blob/main/method.py",
+      "detail": "per_qa_rag generation_params: do_sample false, temperature 0.0, max_tokens 1024; live module.py planner configuration also uses temperature 0.0/max_tokens 1024."
+    },
+    "answer_temperature": {
+      "kind": "code",
+      "reference": "https://github.com/GenIRAG/PER-PSE/blob/main/method.py",
+      "detail": "per_qa_rag generation_params: do_sample false, temperature 0.0, max_tokens 1024; live module.py planner configuration also uses temperature 0.0/max_tokens 1024."
+    },
+    "max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/GenIRAG/PER-PSE/blob/main/method.py",
+      "detail": "per_qa_rag generation_params: do_sample false, temperature 0.0, max_tokens 1024; live module.py planner configuration also uses temperature 0.0/max_tokens 1024."
+    },
+    "answer_max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/GenIRAG/PER-PSE/blob/main/method.py",
+      "detail": "per_qa_rag generation_params: do_sample false, temperature 0.0, max_tokens 1024; live module.py planner configuration also uses temperature 0.0/max_tokens 1024."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "BGE dense retrieval over the candidate passages supplied to every baseline; CoA reads all candidates without retrieval."
+    },
+    "top_k": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2025.acl-long.1142.pdf#page=13",
+      "detail": "Appendix D.1: executor retrieves five passages per subquery."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "256-step execution limit; method-specific step units are documented in agent_parameters.md. Reaching the limit returns an error."
+    },
+    "seeds": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    },
+    "use_hyde": {
+      "kind": "code",
+      "reference": "https://github.com/GenIRAG/PER-PSE/blob/main/method.py",
+      "detail": "per_qa_rag enables use_hyde and disables use_rewriter/use_relevant_expert."
+    },
+    "hyde_query_repetitions": {
+      "kind": "code",
+      "reference": "https://github.com/GenIRAG/PER-PSE/blob/main/module.py",
+      "detail": "PERQARAGExecutor.get_hyde_query repeats the original query five times before appending the generated first line."
+    },
+    "max_plan_nodes": {
+      "kind": "choice",
+      "reference": "baselines/references/agent_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "encoder": {
+      "kind": "adaptation",
+      "reference": "shared experiment protocol",
+      "detail": "Shared Qwen2.5-32B-Instruct, Qwen tokenizer, BGE-base-en-v1.5, seeds 42/123/2026; replaces original backbones."
+    }
+  },
+  "encoder": "BAAI/bge-base-en-v1.5"
+}

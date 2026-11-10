@@ -1,0 +1,36 @@
+{
+  "model_type": "strategy_gcn",
+  "structure_source": "t5_base",
+  "structure_description": "T5-base (amrlib model_parse_t5 v0.2.0)",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "input_dim": 768,
+  "labels": [
+    "sequential",
+    "parallel",
+    "hierarchical"
+  ],
+  "retraining_seed": 2026,
+  "selected_training_questions": 1000,
+  "effective_training_graphs": 1000,
+  "architecture": {
+    "projection": 128,
+    "gcn_layers": 2,
+    "gcn_hidden": 128,
+    "mlp": [
+      128,
+      64,
+      3
+    ],
+    "dropout": 0.2
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "epochs": 30,
+  "batch_size": 16,
+  "checkpoint_selection": "last_epoch",
+  "weights_sha256": "3abd329bba77eb92d504c375fa321ce7cda45e3cec29609600a249571678190f",
+  "parameter_count": 139907
+}

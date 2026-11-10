@@ -1,0 +1,36 @@
+{
+  "model_type": "strategy_gcn",
+  "structure_source": "graphene",
+  "structure_description": "Graphene (CAIL + T5-base + SPRING; support 0.5)",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "input_dim": 768,
+  "labels": [
+    "sequential",
+    "parallel",
+    "hierarchical"
+  ],
+  "retraining_seed": 2026,
+  "selected_training_questions": 1000,
+  "effective_training_graphs": 1000,
+  "architecture": {
+    "projection": 128,
+    "gcn_layers": 2,
+    "gcn_hidden": 128,
+    "mlp": [
+      128,
+      64,
+      3
+    ],
+    "dropout": 0.2
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "epochs": 30,
+  "batch_size": 16,
+  "checkpoint_selection": "last_epoch",
+  "weights_sha256": "4267481e721b5b56e7530238fef8224a76ad538754b677cb9ddcc66cf601995c",
+  "parameter_count": 139907
+}

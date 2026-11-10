@@ -1,0 +1,60 @@
+[
+  {
+    "structure_source": "spring",
+    "weights": "checkpoints/SPRING/model.safetensors",
+    "weights_sha256": "1a61ed2721c3db524d99c74c7030b364d8b8353e6c9dccba91fda9f908f2c662",
+    "effective_training_graphs": 1000,
+    "retraining_seed": 2026,
+    "parameter_count": 139907,
+    "graph_source": {
+      "graph_source_name": "SPRING",
+      "official_reference": "https://github.com/SapienzaNLP/spring",
+      "interface": "amrlib parse_spring",
+      "upstream_kind": "external_amr_parser",
+      "interface_reference": "https://github.com/bjascob/amrlib-models",
+      "upstream_weights_included": false
+    },
+    "provenance_record": "checkpoints/source_provenance.json"
+  },
+  {
+    "structure_source": "cail",
+    "weights": "checkpoints/cail/model.safetensors",
+    "weights_sha256": "18323bfd5b37e53d49d936e121e03bc7b60c147e1d3ef5177fd6777e0a5d8ed6",
+    "effective_training_graphs": 1000,
+    "retraining_seed": 2026,
+    "parameter_count": 139907
+  },
+  {
+    "structure_source": "t5_base",
+    "weights": "checkpoints/t5_base/model.safetensors",
+    "weights_sha256": "3abd329bba77eb92d504c375fa321ce7cda45e3cec29609600a249571678190f",
+    "effective_training_graphs": 1000,
+    "retraining_seed": 2026,
+    "parameter_count": 139907
+  },
+  {
+    "structure_source": "graphene",
+    "weights": "checkpoints/graphene/model.safetensors",
+    "weights_sha256": "4267481e721b5b56e7530238fef8224a76ad538754b677cb9ddcc66cf601995c",
+    "effective_training_graphs": 1000,
+    "retraining_seed": 2026,
+    "parameter_count": 139907
+  },
+  {
+    "structure_source": "gpt4o_mini_amr",
+    "weights": "checkpoints/GPT-4o-mini/model.safetensors",
+    "weights_sha256": "bed74f59e39b3076246d395d23d8cfcc22b6c85ed2e00bbb15fd48446c088c3d",
+    "effective_training_graphs": 823,
+    "retraining_seed": 2026,
+    "parameter_count": 139907,
+    "graph_source": {
+      "graph_source_name": "GPT-4o-mini",
+      "official_reference": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+      "interface": "OpenAI API",
+      "upstream_kind": "external_api_model",
+      "model_id": "gpt-4o-mini",
+      "upstream_weights_included": false
+    },
+    "provenance_record": "checkpoints/source_provenance.json"
+  }
+]

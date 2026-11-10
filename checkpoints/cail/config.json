@@ -1,0 +1,36 @@
+{
+  "model_type": "strategy_gcn",
+  "structure_source": "cail",
+  "structure_description": "CAIL (amrlib parse_gsii v0.1.0)",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "input_dim": 768,
+  "labels": [
+    "sequential",
+    "parallel",
+    "hierarchical"
+  ],
+  "retraining_seed": 2026,
+  "selected_training_questions": 1000,
+  "effective_training_graphs": 1000,
+  "architecture": {
+    "projection": 128,
+    "gcn_layers": 2,
+    "gcn_hidden": 128,
+    "mlp": [
+      128,
+      64,
+      3
+    ],
+    "dropout": 0.2
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "epochs": 30,
+  "batch_size": 16,
+  "checkpoint_selection": "last_epoch",
+  "weights_sha256": "18323bfd5b37e53d49d936e121e03bc7b60c147e1d3ef5177fd6777e0a5d8ed6",
+  "parameter_count": 139907
+}

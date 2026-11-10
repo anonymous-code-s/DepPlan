@@ -1,0 +1,104 @@
+{
+  "method": "r_search",
+  "display_name": "R-Search (Qwen NL-DAG adaptation)",
+  "model": "Qwen2.5-32B-Instruct",
+  "tokenizer": "Qwen/Qwen2.5-32B-Instruct",
+  "inference_mode": "llm_dag_adaptation",
+  "endpoint_api": "chat",
+  "temperature": 0.6,
+  "top_p": 0.9,
+  "plan_max_tokens": 1000,
+  "answer_max_tokens": 2000,
+  "max_tokens": 2000,
+  "max_nodes": 6,
+  "max_query_words": 10,
+  "plan_repair_attempts": 0,
+  "retriever": "dense",
+  "top_k": 3,
+  "sources": [
+    "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/README.md",
+    "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/search_manager.py",
+    "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/train_trl.py",
+    "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/train.sh",
+    "https://arxiv.org/abs/2506.08352",
+    "https://doi.org/10.1016/j.ipm.2026.104732"
+  ],
+  "parameter_sources": {
+    "model": {
+      "kind": "adaptation",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/README.md",
+      "detail": "The public code provides training code without a released checkpoint. The shared Qwen2.5-32B-Instruct generates the NL-DAG and answer as a prompted adaptation."
+    },
+    "tokenizer": {
+      "kind": "adaptation",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/README.md",
+      "detail": "The public code provides training code without a released checkpoint. The shared Qwen2.5-32B-Instruct generates the NL-DAG and answer as a prompted adaptation."
+    },
+    "inference_mode": {
+      "kind": "adaptation",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/README.md",
+      "detail": "The public code provides training code without a released checkpoint. The shared Qwen2.5-32B-Instruct generates the NL-DAG and answer as a prompted adaptation."
+    },
+    "endpoint_api": {
+      "kind": "adaptation",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/README.md",
+      "detail": "The public code provides training code without a released checkpoint. The shared Qwen2.5-32B-Instruct generates the NL-DAG and answer as a prompted adaptation."
+    },
+    "temperature": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/search_manager.py",
+      "detail": "GenerationManager.generate_with_search sets temperature=0.6 and top_p=0.9 in both generation phases."
+    },
+    "top_p": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/search_manager.py",
+      "detail": "GenerationManager.generate_with_search sets temperature=0.6 and top_p=0.9 in both generation phases."
+    },
+    "plan_max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/train.sh",
+      "detail": "train.sh sets max_new_tokens=2000; GenerationManager uses max_tokens//2 for the search plan and max_tokens for the answer. We use these rollout budgets for inference."
+    },
+    "answer_max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/train.sh",
+      "detail": "train.sh sets max_new_tokens=2000; GenerationManager uses max_tokens//2 for the search plan and max_tokens for the answer. We use these rollout budgets for inference."
+    },
+    "max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/train.sh",
+      "detail": "train.sh sets max_new_tokens=2000; GenerationManager uses max_tokens//2 for the search plan and max_tokens for the answer. We use these rollout budgets for inference."
+    },
+    "max_nodes": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/search_manager.py",
+      "detail": "DAGParser, GenerationManager and check_dag default to 6. Source prompt says 8; use the executable parser limit and align the adaptation prompt."
+    },
+    "max_query_words": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/train_trl.py",
+      "detail": "SYSTEM_PROMPT_CN limits each query to 10 words. Local parser enforces the instruction explicitly."
+    },
+    "plan_repair_attempts": {
+      "kind": "adaptation",
+      "reference": "baselines/methods/learned.py",
+      "detail": "An invalid DAG fails explicitly without an extra LLM repair call. Transient transport retries retain the identical request."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/search_manager.py",
+      "detail": "Map General/News/Academy to the shared dense candidate retriever. Preserve tool labels, node queries, topology and result association. No live Google/GNews/arXiv requests."
+    },
+    "top_k": {
+      "kind": "code",
+      "reference": "https://github.com/wentao0429/ReasoningSearch/blob/07f619128223872219af1f14c395038963393df1/RL/search_manager.py",
+      "detail": "We use the public code default SEARCH_TOPK=3 for inference. The top-2 setting in the original paper applies to training."
+    },
+    "answer_temperature": {
+      "kind": "adaptation",
+      "reference": "baselines/README.md",
+      "detail": "Greedy final-answer generation (temperature 0). Planning retains the released workflow's temperature 0.6; the source's answer temperature 0.6 is replaced by the shared evaluation protocol."
+    }
+  },
+  "answer_temperature": 0.0
+}

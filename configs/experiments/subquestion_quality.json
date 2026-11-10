@@ -1,0 +1,4 @@
+{
+  "fluency_model": "gpt2",
+  "encoder": "sentence-transformers/all-MiniLM-L6-v2"
+}

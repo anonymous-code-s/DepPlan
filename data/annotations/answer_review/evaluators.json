@@ -1,0 +1,26 @@
+[
+  {
+    "evaluator_id": "gpt41_mini",
+    "kind": "model",
+    "requested_model": "gpt-4.1-mini",
+    "reported_models": [
+      "gpt-4.1-mini-2025-04-14"
+    ],
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 64
+    }
+  },
+  {
+    "evaluator_id": "annotator_1",
+    "kind": "human",
+    "display_name": "Annotator 1",
+    "qualification": "PhD student in NLP"
+  },
+  {
+    "evaluator_id": "annotator_2",
+    "kind": "human",
+    "display_name": "Annotator 2",
+    "qualification": "PhD student in NLP"
+  }
+]

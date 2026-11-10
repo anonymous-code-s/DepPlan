@@ -1,0 +1,8 @@
+{
+  "deeprag": {
+    "base_url": "http://localhost:8001/v1",
+    "api_key_env": "DEEPRAG_API_KEY",
+    "model": "xinyan233333/DeepRAG-8b",
+    "tokenizer": "xinyan233333/DeepRAG-8b"
+  }
+}

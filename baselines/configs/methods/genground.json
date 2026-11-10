@@ -1,0 +1,78 @@
+{
+  "method": "genground",
+  "model": "Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 512,
+  "answer_max_tokens": 128,
+  "retriever": "dense",
+  "top_k": 10,
+  "max_steps": 8,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "grounding_batch_size": 3,
+  "parameter_sources": {
+    "method": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Executable shared-backbone workflow; see method-specific evidence and adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared comparison backbone replaces each original generator; model id must match the serving endpoint."
+    },
+    "temperature": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2024.acl-long.397/",
+      "detail": "Section 5.4: temperature zero."
+    },
+    "answer_temperature": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2024.acl-long.397/",
+      "detail": "Section 5.4: temperature zero."
+    },
+    "max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "answer_max_tokens": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Default selected for our implementation."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared BGE candidate collection and local dense ranking replace the original retrieval service; corpus scope is provided by the runner."
+    },
+    "top_k": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2024.acl-long.397/",
+      "detail": "Section 5.4: retrieve top ten documents per deducted sub-question."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Eight deduction turns; the paper publishes no iteration cap."
+    },
+    "seeds": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared protocol seeds; applied to every method."
+    },
+    "grounding_batch_size": {
+      "kind": "paper",
+      "reference": "https://aclanthology.org/2024.acl-long.397/",
+      "detail": "Sections 3.3 and 5.4: batches of three, stop at the first supporting batch; the last batch can contain the tenth document."
+    }
+  },
+  "sources": [
+    "https://aclanthology.org/2024.acl-long.397/",
+    "https://github.com/shizhl/Generate-then-Ground/tree/4a40dde76833d5a0ef7f1d4f663ec7a787b8e1b2"
+  ]
+}

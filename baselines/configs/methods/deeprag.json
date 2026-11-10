@@ -1,0 +1,119 @@
+{
+  "method": "deeprag",
+  "display_name": "DeepRAG (released Llama-3-8B checkpoint)",
+  "model": "xinyan233333/DeepRAG-8b",
+  "tokenizer": "xinyan233333/DeepRAG-8b",
+  "checkpoint": "xinyan233333/DeepRAG-8b",
+  "checkpoint_revision": "ece5f36cb1c4b279aad0503b5b6295b73869b677",
+  "checkpoint_stage": "unspecified_by_release",
+  "inference_mode": "released_checkpoint",
+  "endpoint_api": "completion",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 4096,
+  "max_depth": 10,
+  "max_depth_by_dataset": {
+    "hotpotqa": 6
+  },
+  "empty_follow_up_attempts": 10,
+  "retriever": "bm25",
+  "top_k": 3,
+  "sources": [
+    "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/README.md",
+    "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/sragsftv2.py",
+    "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/basic.py",
+    "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/main.py",
+    "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/scripts/inference/run.sh",
+    "https://huggingface.co/xinyan233333/DeepRAG-8b/tree/ece5f36cb1c4b279aad0503b5b6295b73869b677",
+    "https://arxiv.org/abs/2502.01142"
+  ],
+  "parameter_sources": {
+    "model": {
+      "kind": "code",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/tree/ece5f36cb1c4b279aad0503b5b6295b73869b677",
+      "detail": "Released Llama-3-8B DeepRAG checkpoint with four weight shards and its tokenizer. A serving alias must refer to these weights."
+    },
+    "tokenizer": {
+      "kind": "code",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/tree/ece5f36cb1c4b279aad0503b5b6295b73869b677",
+      "detail": "Released Llama-3-8B DeepRAG checkpoint with four weight shards and its tokenizer. A serving alias must refer to these weights."
+    },
+    "checkpoint": {
+      "kind": "code",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/tree/ece5f36cb1c4b279aad0503b5b6295b73869b677",
+      "detail": "Released Llama-3-8B DeepRAG checkpoint with four weight shards and its tokenizer. A serving alias must refer to these weights."
+    },
+    "checkpoint_revision": {
+      "kind": "code",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/tree/ece5f36cb1c4b279aad0503b5b6295b73869b677",
+      "detail": "Released Llama-3-8B DeepRAG checkpoint with four weight shards and its tokenizer. A serving alias must refer to these weights."
+    },
+    "checkpoint_stage": {
+      "kind": "choice",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/tree/ece5f36cb1c4b279aad0503b5b6295b73869b677",
+      "detail": "The released checkpoint does not specify its calibration stage."
+    },
+    "inference_mode": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/sragsftv2.py",
+      "detail": "Checkpoint continuation uses the model tokenizer, an assistant prefill and returned stop markers."
+    },
+    "endpoint_api": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/sragsftv2.py",
+      "detail": "Checkpoint continuation uses the model tokenizer, an assistant prefill and returned stop markers."
+    },
+    "temperature": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/scripts/inference/run.sh",
+      "detail": "Released evaluation command sets temperature 0 and generate_max_length 4096. Overrides generation_config.json sampling defaults."
+    },
+    "max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/scripts/inference/run.sh",
+      "detail": "Released evaluation command sets temperature 0 and generate_max_length 4096. Overrides generation_config.json sampling defaults."
+    },
+    "top_p": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/basic.py",
+      "detail": "BasicGenerator.remote_generate uses top_p=0.95."
+    },
+    "max_depth": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/sragsftv2.py",
+      "detail": "SRAGSFTV2 uses max_depth 6 for hotpotqa and 10 for other datasets; config dataset selects the override."
+    },
+    "max_depth_by_dataset": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/sragsftv2.py",
+      "detail": "SRAGSFTV2 uses max_depth 6 for hotpotqa and 10 for other datasets; config dataset selects the override."
+    },
+    "empty_follow_up_attempts": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/algorithms/sragsftv2.py",
+      "detail": "Released follow-up generation retries empty output up to 10 times; exhausted retries now raise a protocol error."
+    },
+    "top_k": {
+      "kind": "code",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/main.py",
+      "detail": "Parser retrieve_topk default is 3."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "https://github.com/gxy-gxy/DeepRAG/blob/1665780b7b6317375d56e71c3ddc52d6f706c380/src/main.py",
+      "detail": "Retain BM25 ranking while restricting retrieval to the shared candidate collection instead of the DPR Wikipedia index."
+    },
+    "max_context_tokens": {
+      "kind": "code",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/blob/ece5f36cb1c4b279aad0503b5b6295b73869b677/config.json",
+      "detail": "Released Llama-3 config sets max_position_embeddings=8192. As in BasicGenerator.remote_generate, cap each output budget to the remaining context; fail if history itself fills the window."
+    },
+    "tokenizer_revision": {
+      "kind": "code",
+      "reference": "https://huggingface.co/xinyan233333/DeepRAG-8b/blob/ece5f36cb1c4b279aad0503b5b6295b73869b677/tokenizer_config.json",
+      "detail": "Use the tokenizer template from the same immutable model revision."
+    }
+  },
+  "max_context_tokens": 8192,
+  "tokenizer_revision": "ece5f36cb1c4b279aad0503b5b6295b73869b677"
+}

@@ -1,0 +1,46 @@
+{
+  "model_type": "strategy_gcn",
+  "structure_source": "spring",
+  "structure_description": "SPRING AMR parser (amrlib parse_spring)",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "input_dim": 768,
+  "labels": [
+    "sequential",
+    "parallel",
+    "hierarchical"
+  ],
+  "retraining_seed": 2026,
+  "selected_training_questions": 1000,
+  "effective_training_graphs": 1000,
+  "architecture": {
+    "projection": 128,
+    "gcn_layers": 2,
+    "gcn_hidden": 128,
+    "mlp": [
+      128,
+      64,
+      3
+    ],
+    "dropout": 0.2
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "epochs": 30,
+  "batch_size": 16,
+  "checkpoint_selection": "last_epoch",
+  "weights_sha256": "1a61ed2721c3db524d99c74c7030b364d8b8353e6c9dccba91fda9f908f2c662",
+  "parameter_count": 139907,
+  "release_directory": "SPRING",
+  "graph_source": {
+    "graph_source_name": "SPRING",
+    "official_reference": "https://github.com/SapienzaNLP/spring",
+    "interface": "amrlib parse_spring",
+    "upstream_kind": "external_amr_parser",
+    "interface_reference": "https://github.com/bjascob/amrlib-models",
+    "upstream_weights_included": false
+  },
+  "provenance_record": "checkpoints/source_provenance.json"
+}

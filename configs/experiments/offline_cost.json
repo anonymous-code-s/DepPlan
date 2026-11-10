@@ -1,0 +1,8 @@
+{
+  "model": "Qwen2.5-32B-Instruct",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "seed": 2026,
+  "workers": 8,
+  "max_tokens": 128,
+  "timeout": 180
+}

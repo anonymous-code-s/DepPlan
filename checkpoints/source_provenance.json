@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "Graph-source attribution and file integrity for the released strategy classifiers.",
+  "hash_scope": "File digests identify our classifier artifacts; they are not hashes of external parser or API model weights.",
+  "sources": [
+    {
+      "structure_source": "spring",
+      "graph_source": {
+        "graph_source_name": "SPRING",
+        "official_reference": "https://github.com/SapienzaNLP/spring",
+        "interface": "amrlib parse_spring",
+        "upstream_kind": "external_amr_parser",
+        "interface_reference": "https://github.com/bjascob/amrlib-models",
+        "upstream_weights_included": false
+      },
+      "classifier_weights": "checkpoints/SPRING/model.safetensors",
+      "weights_sha256": "1a61ed2721c3db524d99c74c7030b364d8b8353e6c9dccba91fda9f908f2c662",
+      "tensor_payload_sha256": "3f167995a8368d1cf937934c537dc1e1e8e8d1e6d8d810edf23e6b6b024eac07",
+      "paper_training_seed": 2026,
+      "retraining_seed": 2026
+    },
+    {
+      "structure_source": "gpt4o_mini_amr",
+      "graph_source": {
+        "graph_source_name": "GPT-4o-mini",
+        "official_reference": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "interface": "OpenAI API",
+        "upstream_kind": "external_api_model",
+        "model_id": "gpt-4o-mini",
+        "upstream_weights_included": false
+      },
+      "classifier_weights": "checkpoints/GPT-4o-mini/model.safetensors",
+      "weights_sha256": "bed74f59e39b3076246d395d23d8cfcc22b6c85ed2e00bbb15fd48446c088c3d",
+      "tensor_payload_sha256": "879c403d77a48611df2f3351cc09563ab0f95bd8edb088644270f468436bfb33",
+      "paper_training_seed": 2026,
+      "retraining_seed": 2026
+    }
+  ]
+}

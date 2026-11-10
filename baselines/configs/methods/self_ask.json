@@ -1,0 +1,72 @@
+{
+  "method": "self_ask",
+  "model": "Qwen2.5-32B-Instruct",
+  "temperature": 0.0,
+  "answer_temperature": 0.0,
+  "max_tokens": 256,
+  "answer_max_tokens": 256,
+  "retriever": "dense",
+  "top_k": 3,
+  "max_steps": 8,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "parameter_sources": {
+    "method": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Executable shared-backbone workflow; see method-specific evidence and adaptations."
+    },
+    "model": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared comparison backbone replaces each original generator; model id must match the serving endpoint."
+    },
+    "temperature": {
+      "kind": "code",
+      "reference": "https://github.com/ofirpress/self-ask/blob/559e56ec1ba8dc93cf63c4148ec1f4717caf4b60/self-ask_plus_search-engine_demo.ipynb",
+      "detail": "call_gpt: temperature=0."
+    },
+    "answer_temperature": {
+      "kind": "code",
+      "reference": "https://github.com/ofirpress/self-ask/blob/559e56ec1ba8dc93cf63c4148ec1f4717caf4b60/self-ask_plus_search-engine_demo.ipynb",
+      "detail": "call_gpt: temperature=0."
+    },
+    "max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/ofirpress/self-ask/blob/559e56ec1ba8dc93cf63c4148ec1f4717caf4b60/self-ask_plus_search-engine_demo.ipynb",
+      "detail": "call_gpt: max_tokens=256."
+    },
+    "answer_max_tokens": {
+      "kind": "code",
+      "reference": "https://github.com/ofirpress/self-ask/blob/559e56ec1ba8dc93cf63c4148ec1f4717caf4b60/self-ask_plus_search-engine_demo.ipynb",
+      "detail": "call_gpt: max_tokens=256, including fallback/final answers."
+    },
+    "retriever": {
+      "kind": "adaptation",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared BGE candidate collection and local dense ranking replace the original retrieval service; corpus scope is provided by the runner."
+    },
+    "top_k": {
+      "kind": "adaptation",
+      "reference": "https://aclanthology.org/2025.findings-acl.846/",
+      "detail": "Appendix A uses top-three documents for its Self-Ask reproduction. Chosen for local RAG answer extraction; the original Self-Ask uses Google answer boxes/snippets."
+    },
+    "max_steps": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Eight follow-up controller turns bound the original notebook unbounded loop."
+    },
+    "seeds": {
+      "kind": "choice",
+      "reference": "baselines/references/classic_parameters.md",
+      "detail": "Shared protocol seeds; applied to every method."
+    }
+  },
+  "sources": [
+    "https://aclanthology.org/2023.findings-emnlp.378/",
+    "https://github.com/ofirpress/self-ask/blob/559e56ec1ba8dc93cf63c4148ec1f4717caf4b60/self-ask_plus_search-engine_demo.ipynb"
+  ]
+}
