@@ -1,0 +1,212 @@
+{
+  "device": "cpu",
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "evaluation_questions_per_source": 500,
+  "results": [
+    {
+      "source": "spring",
+      "prediction_disagreements": 0,
+      "questions": 500,
+      "correct": 426,
+      "accuracy_percent": 85.2,
+      "macro_f1_percent": 82.53400169948968,
+      "graph_failures": 0,
+      "labels": [
+        "sequential",
+        "parallel",
+        "hierarchical"
+      ],
+      "confusion_columns": [
+        "sequential",
+        "parallel",
+        "hierarchical",
+        "graph_failed"
+      ],
+      "confusion_matrix": [
+        [
+          270,
+          5,
+          31,
+          0
+        ],
+        [
+          5,
+          89,
+          6,
+          0
+        ],
+        [
+          25,
+          2,
+          67,
+          0
+        ]
+      ],
+      "reference": "Qwen silver strategy labels"
+    },
+    {
+      "source": "cail",
+      "prediction_disagreements": 0,
+      "questions": 500,
+      "correct": 414,
+      "accuracy_percent": 82.8,
+      "macro_f1_percent": 78.56705016637325,
+      "graph_failures": 0,
+      "labels": [
+        "sequential",
+        "parallel",
+        "hierarchical"
+      ],
+      "confusion_columns": [
+        "sequential",
+        "parallel",
+        "hierarchical",
+        "graph_failed"
+      ],
+      "confusion_matrix": [
+        [
+          267,
+          14,
+          25,
+          0
+        ],
+        [
+          3,
+          91,
+          6,
+          0
+        ],
+        [
+          31,
+          7,
+          56,
+          0
+        ]
+      ],
+      "reference": "Qwen silver strategy labels"
+    },
+    {
+      "source": "t5_base",
+      "prediction_disagreements": 0,
+      "questions": 500,
+      "correct": 415,
+      "accuracy_percent": 83.0,
+      "macro_f1_percent": 79.80153720069994,
+      "graph_failures": 0,
+      "labels": [
+        "sequential",
+        "parallel",
+        "hierarchical"
+      ],
+      "confusion_columns": [
+        "sequential",
+        "parallel",
+        "hierarchical",
+        "graph_failed"
+      ],
+      "confusion_matrix": [
+        [
+          262,
+          7,
+          37,
+          0
+        ],
+        [
+          4,
+          89,
+          7,
+          0
+        ],
+        [
+          24,
+          6,
+          64,
+          0
+        ]
+      ],
+      "reference": "Qwen silver strategy labels"
+    },
+    {
+      "source": "graphene",
+      "prediction_disagreements": 0,
+      "questions": 500,
+      "correct": 419,
+      "accuracy_percent": 83.8,
+      "macro_f1_percent": 80.78172393499025,
+      "graph_failures": 1,
+      "labels": [
+        "sequential",
+        "parallel",
+        "hierarchical"
+      ],
+      "confusion_columns": [
+        "sequential",
+        "parallel",
+        "hierarchical",
+        "graph_failed"
+      ],
+      "confusion_matrix": [
+        [
+          262,
+          10,
+          34,
+          0
+        ],
+        [
+          4,
+          91,
+          5,
+          0
+        ],
+        [
+          20,
+          7,
+          66,
+          1
+        ]
+      ],
+      "reference": "Qwen silver strategy labels"
+    },
+    {
+      "source": "gpt4o_mini_amr",
+      "prediction_disagreements": 0,
+      "questions": 500,
+      "correct": 327,
+      "accuracy_percent": 65.4,
+      "macro_f1_percent": 64.0060745291796,
+      "graph_failures": 72,
+      "labels": [
+        "sequential",
+        "parallel",
+        "hierarchical"
+      ],
+      "confusion_columns": [
+        "sequential",
+        "parallel",
+        "hierarchical",
+        "graph_failed"
+      ],
+      "confusion_matrix": [
+        [
+          232,
+          0,
+          36,
+          38
+        ],
+        [
+          19,
+          56,
+          20,
+          5
+        ],
+        [
+          24,
+          2,
+          39,
+          29
+        ]
+      ],
+      "reference": "Qwen silver strategy labels"
+    }
+  ]
+}

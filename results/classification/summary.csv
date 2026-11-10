@@ -1,0 +1,16 @@
+method,model_name,cohort,training_count,test_count,correct_count,graph_failures,accuracy_percent,macro_f1_percent
+spring,SPRING,original_200,1000,200,181,0,90.5,85.00730907510568
+spring,SPRING,additional_300,1000,300,245,0,81.66666666666667,80.67293867932554
+spring,SPRING,combined_500,1000,500,426,0,85.2,82.53400169948968
+cail,CAIL,original_200,1000,200,174,0,87.0,79.35851408096644
+cail,CAIL,additional_300,1000,300,240,0,80.0,77.6079392620746
+cail,CAIL,combined_500,1000,500,414,0,82.8,78.56705016637325
+t5_base,T5-base,original_200,1000,200,178,0,89.0,82.57120626538604
+t5_base,T5-base,additional_300,1000,300,237,0,79.0,77.72669220945083
+t5_base,T5-base,combined_500,1000,500,415,0,83.0,79.80153720069994
+graphene,Graphene (three-source ensemble),original_200,1000,200,180,0,90.0,84.39701535657932
+graphene,Graphene (three-source ensemble),additional_300,1000,300,239,1,79.66666666666666,78.45956909163453
+graphene,Graphene (three-source ensemble),combined_500,1000,500,419,1,83.8,80.78172393499025
+gpt4o_mini_amr,GPT-4o-mini,original_200,823,200,145,21,72.5,66.76752476378677
+gpt4o_mini_amr,GPT-4o-mini,additional_300,823,300,182,51,60.66666666666667,62.1538364582351
+gpt4o_mini_amr,GPT-4o-mini,combined_500,823,500,327,72,65.4,64.0060745291796

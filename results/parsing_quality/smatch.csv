@@ -1,0 +1,6 @@
+structure_source,smatch_f1_percent,gold_questions
+CAIL,76.39,100
+T5-base,78.65,100
+Graphene,80.12,100
+LLM-based (GPT-4o-mini),71.84,100
+SPRING,82.47,100
